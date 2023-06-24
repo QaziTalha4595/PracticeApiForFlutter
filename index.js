@@ -23,9 +23,9 @@ app.get('/Login', (req, res) => {
                 console.log(err);
             }
             if(data.length > 0){
-                res.send(`Login Successfully`)
+                return res.json({success: true, message: `Login Successfully`})
             }else{
-                res.send(`Invalid Credential`)
+                return res.json({success: false, message: `Invalid Credential`})
             }
         }
       );
